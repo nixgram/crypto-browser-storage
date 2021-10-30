@@ -4,9 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "crypto-local-storage": [
-        "dist/crypto-local-storage/crypto-local-storage",
-        "dist/crypto-local-storage"
+      "crypto-browser-storage": [
+        "dist/crypto-browser-storage/crypto-browser-storage",
+        "dist/crypto-browser-storage"
       ]
     },
     "outDir": "./dist/out-tsc",

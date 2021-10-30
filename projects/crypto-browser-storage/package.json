@@ -1,5 +1,5 @@
 {
-  "name": "crypto-local-storage",
+  "name": "crypto-browser-storage",
   "version": "0.0.1",
   "description": "☢ A simple package for secure local storage data by encryption using Crypto.JS",
   "author": {

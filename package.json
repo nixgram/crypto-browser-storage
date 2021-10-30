@@ -1,5 +1,5 @@
 {
-  "name": "crypto-local-storage",
+  "name": "crypto-browser-storage",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

@@ -7,7 +7,7 @@ const SecureStorage = require("secure-web-storage");
 @Injectable({
   providedIn: 'root'
 })
-export class CryptoLocalStorageService {
+export class CryptoBrowserStorageService {
 
   private secureStorage = new SecureStorage(localStorage, {
     hash: function hash(key: any) {
