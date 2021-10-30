@@ -1,16 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CryptoLocalStorageComponent } from './crypto-local-storage.component';
-
-
+import {NgModule} from '@angular/core';
 
 @NgModule({
-  declarations: [
-    CryptoLocalStorageComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    CryptoLocalStorageComponent
-  ]
+  declarations: [],
+  imports: [],
+  exports: []
 })
-export class CryptoLocalStorageModule { }
+export class CryptoLocalStorageModule {}
