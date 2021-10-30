@@ -1,0 +1,13 @@
+{
+  "name": "crypto-local-storage",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.8",
+    "secure-web-storage": "^1.0.2",
+    "tslib": "^2.3.0"
+  }
+}

@@ -43,3 +43,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/projects/crypto-local-storage/node_modules/

@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "crypto-local-storage": {
+      "projectType": "library",
+      "root": "projects/crypto-local-storage",
+      "sourceRoot": "projects/crypto-local-storage/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/crypto-local-storage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/crypto-local-storage/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/crypto-local-storage/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/crypto-local-storage/src/test.ts",
+            "tsConfig": "projects/crypto-local-storage/tsconfig.spec.json",
+            "karmaConfig": "projects/crypto-local-storage/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "crypto-local-storage"
 }
