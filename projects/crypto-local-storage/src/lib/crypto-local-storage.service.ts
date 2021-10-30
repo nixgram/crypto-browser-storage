@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import * as CryptoJS from "crypto-js";
+import {KEY} from "./KEY";
 
 const SecureStorage = require("secure-web-storage");
-const SECRET_KEY = "A key is define here";
-
 
 @Injectable({
   providedIn: 'root'
@@ -13,24 +12,27 @@ export class CryptoLocalStorageService {
   private secureStorage = new SecureStorage(localStorage, {
     hash: function hash(key: any) {
       // @ts-ignore
-      key = CryptoJS.SHA256(key, SECRET_KEY);
+      key = CryptoJS.SHA256(key, KEY);
       return key.toString();
     },
 
     encrypt: function encrypt(data: any) {
-      data = CryptoJS.AES.encrypt(data, SECRET_KEY);
+      data = CryptoJS.AES.encrypt(data, KEY);
       data = data.toString();
       return data;
     },
 
     decrypt: function decrypt(data: any) {
-      data = CryptoJS.AES.decrypt(data, SECRET_KEY);
+      data = CryptoJS.AES.decrypt(data, KEY);
       data = data.toString(CryptoJS.enc.Utf8);
       return data;
     },
   });
 
-  public setCache<T>(key: string, data: T): void {
+
+  // Set local storage data via key
+  public setCache(key: string, data: any): void {
+
     try {
       if (data) {
         this.secureStorage.setItem(key, data);
@@ -42,6 +44,7 @@ export class CryptoLocalStorageService {
     }
   }
 
+  // Get local storage  data via key
   public getCache(key: string) {
     try {
       return this.secureStorage.getItem(key);
@@ -50,15 +53,9 @@ export class CryptoLocalStorageService {
     }
   }
 
-  public resetCache(key: string): void {
-    try {
-      this.secureStorage.setItem(key, null);
-    } catch (error) {
-      console.log(`Error To Reset ${key} Cache Data:`, error);
-    }
-  }
 
-  public clearCacheDataByKey(key: string) {
+  // Remove stored local storage data via key
+  public removeCacheByKey(key: string) {
     try {
       this.secureStorage.removeItem(key);
     } catch (error) {
@@ -66,5 +63,9 @@ export class CryptoLocalStorageService {
     }
   }
 
+  // It remove all local storage stored data
+  public clearAllCache() {
+    localStorage.clear();
+  }
 
 }

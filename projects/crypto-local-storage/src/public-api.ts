@@ -3,4 +3,3 @@
  */
 
 export * from './lib/crypto-local-storage.service';
-export * from './lib/crypto-local-storage.module';
