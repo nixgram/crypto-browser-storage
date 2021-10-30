@@ -1,27 +1,42 @@
-# CryptoLocalStorage
+# Crypto Local Storage
+☢ A simple package for secure local storage data by encryption using Crypto.JS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+## How to use
+* Must need an Angular Project ( version >= 12.0.0 )
+* Use ``npm i crypto-local-storage``
+* Inject your Component or Service as Dependency Injection
+* Then you will be able to access `crypto-localstorage` function to set & retrieve data.
 
-## Development server
+## Sample Code Snippet
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+````
+export class AppComponent {
 
-## Code scaffolding
+constructor(private cache: CryptoLocalStorageService) {}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+    tests() {
+    
+    this.cache.setCache("Posts1", [{"id": 1, "name": "Sample"}]);
+    this.cache.setCache("Posts2", ["id", "name", "Sample"]);
+    this.cache.setCache("Posts3", 3);
+    this.cache.setCache("Posts5", {"id": 4, "name": "Sample"});
+    
+    // this.cache.removeCacheByKey("Posts1")
+    
+    console.log(this.cache.getCache("Posts1"))
+    console.log(this.cache.getCache("Posts2"))
+    console.log(this.cache.getCache("Posts3"))
+    console.log(this.cache.getCache("Posts5"))
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    this.cache.clearAllCache();
+    
+    }
 
-## Running unit tests
+}
+````
+End result of the following ``tests()`` method is bellow,
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Screenshot 2021-10-30 204648](https://user-images.githubusercontent.com/37630292/139538058-0fa32585-bc84-4518-b6e9-cec7d38545a8.png)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot 2021-10-30 205713](https://user-images.githubusercontent.com/37630292/139538317-9e63a3fd-fe0a-406e-9573-a215bf56a30d.png)

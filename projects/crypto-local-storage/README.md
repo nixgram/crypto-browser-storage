@@ -1,24 +1,42 @@
-# CryptoLocalStorage
+# Crypto Local Storage
+☢ A simple package for secure local storage data by encryption using Crypto.JS
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+## How to use
+* Must need an Angular Project ( version >= 12.0.0 )
+* Use ``npm i crypto-local-storage``
+* Inject your Component or Service as Dependency Injection
+* Then you will be able to access `crypto-localstorage` function to set & retrieve data.
 
-## Code scaffolding
+## Sample Code Snippet
 
-Run `ng generate component component-name --project crypto-local-storage` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project crypto-local-storage`.
-> Note: Don't forget to add `--project crypto-local-storage` or else it will be added to the default project in your `angular.json` file. 
+````
+export class AppComponent {
 
-## Build
+constructor(private cache: CryptoLocalStorageService) {}
 
-Run `ng build crypto-local-storage` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
+    tests() {
+    
+    this.cache.setCache("Posts1", [{"id": 1, "name": "Sample"}]);
+    this.cache.setCache("Posts2", ["id", "name", "Sample"]);
+    this.cache.setCache("Posts3", 3);
+    this.cache.setCache("Posts5", {"id": 4, "name": "Sample"});
+    
+    // this.cache.removeCacheByKey("Posts1")
+    
+    console.log(this.cache.getCache("Posts1"))
+    console.log(this.cache.getCache("Posts2"))
+    console.log(this.cache.getCache("Posts3"))
+    console.log(this.cache.getCache("Posts5"))
 
-After building your library with `ng build crypto-local-storage`, go to the dist folder `cd dist/crypto-local-storage` and run `npm publish`.
+    this.cache.clearAllCache();
+    
+    }
 
-## Running unit tests
+}
+````
+End result of the following ``tests()`` method is bellow,
 
-Run `ng test crypto-local-storage` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Screenshot 2021-10-30 204648](https://user-images.githubusercontent.com/37630292/139538058-0fa32585-bc84-4518-b6e9-cec7d38545a8.png)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot 2021-10-30 205713](https://user-images.githubusercontent.com/37630292/139538317-9e63a3fd-fe0a-406e-9573-a215bf56a30d.png)
