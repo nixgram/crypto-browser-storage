@@ -12,6 +12,14 @@
 
 <br>
 
+## Angular Compability Version:
+
+- For `ng v12.x.x` use `npm i crypto-browser-storage@1.0.3`
+- For `ng v14.x.x` use `npm i crypto-browser-storage@1.1.4`
+- For `ng v15.x.x` use `npm i crypto-browser-storage@2.0.0`
+
+<br>
+
 ## Sample Code Snippet
 <br>
 
@@ -44,7 +52,8 @@ constructor(private cache: CryptoBrowserStorageService) {}
 
 }
 ````
-End result of the following ``tests()`` method is bellow,
+### End result of the following ``tests()`` method is bellow,
+<br>
 
 ![Screenshot 2021-10-30 204648](https://user-images.githubusercontent.com/37630292/139538058-0fa32585-bc84-4518-b6e9-cec7d38545a8.png)
 

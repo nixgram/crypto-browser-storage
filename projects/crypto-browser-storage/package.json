@@ -1,17 +1,23 @@
 {
   "name": "crypto-browser-storage",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "☢ A simple package for secure local storage data by encryption using Crypto.JS",
   "author": {
     "url": "https://github.com/nixgram",
     "name": "Sefat Anam",
     "email": "sefatanam@gmail.com"
   },
-  "keywords": ["npm","angular","typescript","npm-package","localstorage","cryptojs"],
-
+  "keywords": [
+    "npm",
+    "angular",
+    "typescript",
+    "npm-package",
+    "localstorage",
+    "cryptojs"
+  ],
   "peerDependencies": {
-    "@angular/common": "^12.2.0",
-    "@angular/core": "^12.2.0",
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
     "crypto-js": "^3.1.8",
     "secure-web-storage": "^1.0.2"
   },
@@ -21,7 +27,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@types/crypto-js": "^4.0.2",
+    "@types/crypto-js": "^4.1.1",
     "@types/node": "^16.11.6"
   },
   "license": "MIT"
