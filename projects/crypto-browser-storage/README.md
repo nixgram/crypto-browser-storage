@@ -1,13 +1,20 @@
 # Crypto Browser Storage
-☢ A simple package for secure local storage data by encryption using Crypto.JS
+☢ A simple package for secure local storage data by encryption using Crypto.JS. Project generated with angular version ```12.2.0```, sou must need an Angular Project ( ``version >= 12.2.x`` )
 
 ## How to use
-* Must need an Angular Project ( ``version >= 12.x.x`` )
 * Use ``npm i crypto-browser-storage``
-* Inject your Component or Service as Dependency Injection
-* Then you will be able to access `crypto-browser-storage`'s library function to set, retrieve & many more.
+* Inject to your component or service as Dependency Injection
+* Then you will be able to access `crypto-browser-storage`'s library functions, 
+    -   setCache
+    -   getCache
+    -   removeCacheByKey
+    -   clearAllCache
+
+<br>
 
 ## Sample Code Snippet
+<br>
+
 
 ````
 import { CryptoBrowserStorageService } from 'crypto-browser-storage';
