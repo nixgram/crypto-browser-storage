@@ -2,10 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/crypto-browser-storage",
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdModuleIds": {
-      "crypto-js": "crypto-js"
-    }
+    "entryFile": "src/public-api.ts"
   },
   "allowedNonPeerDependencies": [
     "crypto-js",
