@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as CryptoJS from "crypto-js";
-import {KEY} from "./KEY";
+import { KEY } from "./KEY";
 
 const SecureStorage = require("secure-web-storage");
 
@@ -30,9 +30,13 @@ export class CryptoBrowserStorageService {
   });
 
 
-  // Set local storage data via key
+  /**
+   * Set data to localstorage via key
+   * @param {any} key:string
+   * @param {any} data: any
+   * @returns {void} void
+   */
   public setCache(key: string, data: any): void {
-
     try {
       if (data) {
         this.secureStorage.setItem(key, data);
@@ -44,26 +48,40 @@ export class CryptoBrowserStorageService {
     }
   }
 
-  // Get local storage  data via key
+
+  /**
+   * Get localstorage data via key
+   * @param {any} key:string
+   * @returns {any} any: number | string | object | array
+   */
   public getCache(key: string) {
     try {
       return this.secureStorage.getItem(key);
     } catch (error) {
-      console.log(`Error To Get ${key} Cache Data:`, error);
+      console.log('Key not found in localstorage or maybe wrong key.');
     }
   }
 
 
-  // Remove stored local storage data via key
+  /**
+   * It will remove stored local storage data via key
+   * @param {any} key:string
+   * @returns {void} void
+   */
+
   public removeCacheByKey(key: string) {
     try {
       this.secureStorage.removeItem(key);
     } catch (error) {
-      console.log(`Error To Remove ${key} Cache Data:`, error);
+      console.error('Key not found in localstorage or maybe wrong key.');
     }
   }
 
-  // It remove all local storage stored data
+
+  /**
+   * It behave like native localstorage clear() function. It will clear all cache including pre-existing localstorage data.
+   * @returns {void} void
+   */
   public clearAllCache() {
     localStorage.clear();
   }

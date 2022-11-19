@@ -1,6 +1,6 @@
 {
   "name": "crypto-browser-storage",
-  "version": "0.0.1",
+  "version": "1.0.6",
   "description": "☢ A simple package for secure local storage data by encryption using Crypto.JS",
   "author": {
     "url": "https://github.com/nixgram",
@@ -23,5 +23,6 @@
   "devDependencies": {
     "@types/crypto-js": "^4.0.2",
     "@types/node": "^16.11.6"
-  }
+  },
+  "license": "MIT"
 }
