@@ -1,6 +1,6 @@
 {
   "name": "crypto-browser-storage",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -37,5 +37,6 @@
     "ng-packagr": "^15.0.0",
     "typescript": "~4.8.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }

@@ -6,6 +6,9 @@
   },
   "allowedNonPeerDependencies": [
     "crypto-js",
-    "secure-web-storage"
+    "generate-"
+  ],
+  "assets": [
+    "./node_modules/secure-web-storage/secure-storage.js"
   ]
 }

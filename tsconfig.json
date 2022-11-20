@@ -5,7 +5,6 @@
     "baseUrl": "./",
     "paths": {
       "crypto-browser-storage": [
-        "dist/crypto-browser-storage/crypto-browser-storage",
         "dist/crypto-browser-storage"
       ]
     },
@@ -21,7 +20,8 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2020",
-    "module": "es2020",
+    "module": "ES6",
+    "allowJs": true,
     "lib": [
       "es2018",
       "dom"
