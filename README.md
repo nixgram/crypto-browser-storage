@@ -12,11 +12,11 @@
 
 <br>
 
-## Angular Compability Version:
+## Angular Compatibility Version
 
 - For `ng v12.x.x` use `npm i crypto-browser-storage@1.0.3`
-- For `ng v14.x.x` use `npm i crypto-browser-storage@1.1.4`
-- For `ng v15.x.x` use `npm i crypto-browser-storage@2.0.0`
+- For `ng v14.x.x` use `npm i crypto-browser-storage@1.4.0`
+- For `ng v15.x.x` use `npm i crypto-browser-storage@2.1.0`
 
 <br>
 
