@@ -3,10 +3,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
-    "target": "es2020",
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
+    "allowJs": true,
+    "module": "ES6",
     "types": [
       "node"
     ],
@@ -16,7 +17,8 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+     
   },
   "exclude": [
     "src/test.ts",
