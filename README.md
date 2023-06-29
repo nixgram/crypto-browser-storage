@@ -17,6 +17,7 @@
 - For `ng v12.x.x` use `npm i crypto-browser-storage@1.0.3`
 - For `ng v14.x.x` use `npm i crypto-browser-storage@1.4.0`
 - For `ng v15.x.x` use `npm i crypto-browser-storage@2.1.0`
+- For `ng v16.0.0` use `npm i crypto-browser-storage@3.0.0`
 
 <br>
 

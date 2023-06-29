@@ -1,12 +1,21 @@
 {
   "name": "crypto-browser-storage",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "author": {
+    "url": "https://github.com/sefatanam",
+    "name": "Sefat Anam",
+    "email": "sefatanam@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nixgram/crypto-browser-storage"
   },
   "private": true,
   "dependencies": {
