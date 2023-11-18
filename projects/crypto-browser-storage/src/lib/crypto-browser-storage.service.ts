@@ -7,34 +7,29 @@ export const CRYPTO_HASH_KEY = new InjectionToken<string>('CRYPTO_HASH_KEY');
   providedIn: 'root'
 })
 export class CryptoBrowserStorageService {
-
-  cryptoHashKey!:string;
+  private secureStorage : typeof SecureStorage;
 
   constructor(@Inject(CRYPTO_HASH_KEY) cryptoHashKey:string ){
-    this.cryptoHashKey=cryptoHashKey;
+    this.secureStorage = new SecureStorage(localStorage, {
+      hash: function hash(key: any) {
+        //@ts-ignore
+        key = CryptoJS.SHA256(key, cryptoHashKey);
+        return key.toString();
+      },
+  
+      encrypt: function encrypt(data: any) {
+        data = CryptoJS.AES.encrypt(data, cryptoHashKey);
+        data = data.toString();
+        return data;
+      },
+  
+      decrypt: function decrypt(data: any) {
+        data = CryptoJS.AES.decrypt(data, cryptoHashKey);
+        data = data.toString(CryptoJS.enc.Utf8);
+        return data;
+      },
+    });
   }
-
-  private secureStorage = new SecureStorage(localStorage, {
-    KEY : this.cryptoHashKey,
-    hash: function hash(key: any) {
-      key = CryptoJS.SHA256(key, this.KEY);
-      return key.toString();
-    },
-
-    encrypt: function encrypt(data: any) {
-      data = CryptoJS.AES.encrypt(data, this.KEY);
-      data = data.toString();
-      return data;
-    },
-
-    decrypt: function decrypt(data: any) {
-      data = CryptoJS.AES.decrypt(data, this.KEY);
-      data = data.toString(CryptoJS.enc.Utf8);
-      return data;
-    },
-  });
-
-
   /**
    * Set data to localstorage via key
    * @param {any} key:string
