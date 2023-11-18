@@ -1,5 +1,3 @@
-// var Generator = require('generate-js'); 
-
 // @ts-ignore
 import * as Generator from 'generate-js';
 

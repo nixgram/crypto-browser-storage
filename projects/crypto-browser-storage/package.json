@@ -1,6 +1,6 @@
 {
   "name": "crypto-browser-storage",
-  "version": "2.1.0",
+  "version": "4.0.2",
   "description": "☢ A simple package for secure local storage data by encryption using Crypto.JS",
   "author": {
     "url": "https://github.com/nixgram",
@@ -16,8 +16,8 @@
     "cryptojs"
   ],
   "peerDependencies": {
-    "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0",
+    "@angular/common": "^17.0.3",
+    "@angular/core": "^17.0.3",
     "crypto-js": "^3.1.8",
     "generate-js": "^3.1.2"
   },

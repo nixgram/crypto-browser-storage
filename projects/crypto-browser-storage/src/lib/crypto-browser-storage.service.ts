@@ -1,34 +1,35 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 import * as CryptoJS from "crypto-js";
-import { KEY } from "./KEY";
 import { SecureStorage } from './secure-storage';
+export const CRYPTO_HASH_KEY = new InjectionToken<string>('CRYPTO_HASH_KEY');
 
 @Injectable({
   providedIn: 'root'
 })
 export class CryptoBrowserStorageService {
+  private secureStorage : typeof SecureStorage;
 
-  private secureStorage = new SecureStorage(localStorage, {
-    hash: function hash(key: any) {
-      // @ts-ignore
-      key = CryptoJS.SHA256(key, KEY);
-      return key.toString();
-    },
-
-    encrypt: function encrypt(data: any) {
-      data = CryptoJS.AES.encrypt(data, KEY);
-      data = data.toString();
-      return data;
-    },
-
-    decrypt: function decrypt(data: any) {
-      data = CryptoJS.AES.decrypt(data, KEY);
-      data = data.toString(CryptoJS.enc.Utf8);
-      return data;
-    },
-  });
-
-
+  constructor(@Inject(CRYPTO_HASH_KEY) cryptoHashKey:string ){
+    this.secureStorage = new SecureStorage(localStorage, {
+      hash: function hash(key: any) {
+        //@ts-ignore
+        key = CryptoJS.SHA256(key, cryptoHashKey);
+        return key.toString();
+      },
+  
+      encrypt: function encrypt(data: any) {
+        data = CryptoJS.AES.encrypt(data, cryptoHashKey);
+        data = data.toString();
+        return data;
+      },
+  
+      decrypt: function decrypt(data: any) {
+        data = CryptoJS.AES.decrypt(data, cryptoHashKey);
+        data = data.toString(CryptoJS.enc.Utf8);
+        return data;
+      },
+    });
+  }
   /**
    * Set data to localstorage via key
    * @param {any} key:string

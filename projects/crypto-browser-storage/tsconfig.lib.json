@@ -8,9 +8,6 @@
     "inlineSources": true,
     "allowJs": true,
     "module": "ES6",
-    "types": [
-      "node"
-    ],
     "typeRoots": [
       "../node_modules/@types"
     ],
