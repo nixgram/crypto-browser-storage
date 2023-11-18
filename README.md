@@ -4,11 +4,11 @@
 ## How to use
 * Use ``npm i crypto-browser-storage``
 * Inject to your component or service as Dependency Injection
-* Then you will be able to access `crypto-browser-storage`'s library functions, 
-    -   setCache
-    -   getCache
-    -   removeCacheByKey
-    -   clearAllCache
+* Then you will be able to access `crypto-browser-storage`'s library functions,
+  -   setCache
+  -   getCache
+  -   removeCacheByKey
+  -   clearAllCache
 
 <br>
 
@@ -17,7 +17,23 @@
 - For `ng v12.x.x` use `npm i crypto-browser-storage@1.0.3`
 - For `ng v14.x.x` use `npm i crypto-browser-storage@1.4.0`
 - For `ng v15.x.x` use `npm i crypto-browser-storage@2.1.0`
-- For `ng v16.0.0` use `npm i crypto-browser-storage@3.0.0`
+- For `ng v16.x.x` use `npm i crypto-browser-storage@3.0.0`
+- For `ng v17.x.x` use `npm i crypto-browser-storage@4.0.2`
+
+## For Angular Version 17 (only) 🎉
+
+Now you can provide your custom encryption key. To provide your custom encryption key you have to follow this instruction.
+Provide `CRYPTO_HASH_KEY` in `app.module.ts`. <br>
+Example:
+
+```
+providers: [
+    ....
+    CryptoBrowserStorageService,
+    { provide: CRYPTO_HASH_KEY, useValue: 'YOUR_KEY_HERE' }
+  ]
+
+```
 
 <br>
 
@@ -59,3 +75,4 @@ constructor(private cache: CryptoBrowserStorageService) {}
 ![Screenshot 2021-10-30 204648](https://user-images.githubusercontent.com/37630292/139538058-0fa32585-bc84-4518-b6e9-cec7d38545a8.png)
 
 ![Screenshot 2021-10-30 205713](https://user-images.githubusercontent.com/37630292/139538317-9e63a3fd-fe0a-406e-9573-a215bf56a30d.png)
+~~~~
