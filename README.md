@@ -17,6 +17,23 @@
 - For `ng v12.x.x` use `npm i crypto-browser-storage@1.0.3`
 - For `ng v14.x.x` use `npm i crypto-browser-storage@1.4.0`
 - For `ng v15.x.x` use `npm i crypto-browser-storage@2.1.0`
+- For `ng v16.x.x` use `npm i crypto-browser-storage@3.0.0`
+- For `ng v17.x.x` use `npm i crypto-browser-storage@4.0.0`
+
+## Special Instruction For Angular Version 17+
+
+Now you can provide your custom encryption key. To provide your custom encryption key you have to follow this instruction.
+Provide `CRYPTO_HASH_KEY` in `app.module.ts`. <br>
+Example:
+
+```
+providers: [
+    ....
+    CryptoBrowserStorageService,
+    { provide: CRYPTO_HASH_KEY, useValue: 'YOUR_KEY_HERE' }
+  ]
+
+```
 
 <br>
 
